@@ -21,9 +21,32 @@
  			slidesToScroll: 1,
 			speed: 300,
 			autoplay: true,
-  			autoplaySpeed: 2000
-            });
-        });
+  			autoplaySpeed: 2000,
+			centerMode: true,
+			centerPadding: '60px',			
+			slidesToShow: 3,
+			responsive: [
+				
+				{
+				breakpoint: 769,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1
+				}
+				},
+				{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1
+				}
+				}
+			// You can unslick at a given breakpoint now by adding:
+			// settings: "unslick"
+			// instead of a settings object
+            ]
+        });        
+    });
     </script>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/style.css">
@@ -32,7 +55,6 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/scroll.css">
     <link rel="stylesheet" href="css/popup.css">    
-    <script src="js/slick.min.js"></script>
     <!-- <script src="js/jquery-1.6.2.min.js"></script> -->
     <!-- ㅇㅇ -->
     <style>
@@ -335,11 +357,11 @@
             <span><a href="" class="scroll"></a></span>
             <ul class="portani">
                 <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1664575196079-9ac04582854b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""><p>인천 삼산고 졸업</p></div></li>
-                <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1665686376173-ada7a0031a85?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""><p>군대 병장 만기제대</p></div></li>
+                <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1665686376173-ada7a0031a85?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""><p>병장 만기제대</p></div></li>
                 <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1661961111184-11317b40adb2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80" alt=""><p>인하공전 졸업</p></div></li>
-                <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1664575198263-269a022d6e14?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""><p>정보처리산업기사 국비과정 수료</p></div></li>
-                <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1664574654578-d5a6a4f447bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""><p>우체국물류지원단 인천공항 국제운송팀 근무</p></div></li>
-                <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1661961112835-ca6f5811d2af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80" alt=""><p>UI / UX 과정 수료예정</p></div></li>
+                <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1664575198263-269a022d6e14?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""><p>정보처리산업기사<br>국비과정 수료</p></div></li>
+                <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1664574654578-d5a6a4f447bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""><p>우체국물류지원단<br> 인천공항국제운송점 <br>근무</p></div></li>
+                <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1661961112835-ca6f5811d2af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80" alt=""><p>UI / UX 과정<br> 수료예정</p></div></li>
             </ul>
         </div>        
     </div>

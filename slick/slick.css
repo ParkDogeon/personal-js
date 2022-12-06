@@ -160,3 +160,30 @@
   text-shadow: 1px 1px 3px black;
   color: white;
 }
+.slick-dots li button::before{
+	font-size: 20px;
+	
+}
+.slick-dots li.slick-active button::before{	
+	transform: scale(2);
+	transition: all 0.7s;
+}
+.slick-track{
+/* 	perspective: 200px; */
+}
+.slick-track li{
+	padding: 20px 30px;
+	box-sizing: border-box;	
+	transform: perspective(200px) scale(0.5) rotateY(-10deg);
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+.slick-track .slick-center{
+    transform: scale(2);
+	transform: rotateY(0deg);
+}
+
+.slick-slide{
+    transition: all 0.7s;
+}

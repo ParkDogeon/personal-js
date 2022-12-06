@@ -525,11 +525,9 @@ section{
   
 }
 .slick-next{
-  
   right: 45px;
 }
 .slick-prev, .slick-next{
-    
   color: #000;
   z-index: 5;
 }
@@ -544,22 +542,21 @@ section{
 }
 .slick-slide .slick_in img{  
   margin: 0 auto;
-  height: 650px;
-  width: auto;
+  height: auto;
+  width: 350px;
 }
 .slick_in{
-  
   position: relative;
 }
 .slick_in p{
   font-family: Pretendard;
   position: absolute;
   top: 25px;
-  width: 1000px;
-  line-height: 2;
-  left: 132px;
+  width: 281px;
+  line-height: 1.5;
+  left: 10px;
   height: 122px;
-  font-size: 48px;
+  font-size: 35px;
   text-shadow: 1px 1px 3px black;
   color: white;
 }
