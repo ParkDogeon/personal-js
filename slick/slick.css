@@ -117,3 +117,46 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+
+.slick-prev{
+  
+}
+.slick-next{
+  
+  right: 45px;
+}
+.slick-prev, .slick-next{
+    
+  color: #000;
+  z-index: 5;
+}
+.slick-prev::before, .slick-next::before{
+    
+  /*! background-color: #ccc; */
+  color: #000;
+  font-size: 50px;
+}
+.slick-track::before, .slick-track::after{
+  content: "";
+}
+.slick-slide .slick_in img{  
+  margin: 0 auto;
+  height: 650px;
+  width: auto;
+}
+.slick_in{
+  
+  position: relative;
+}
+.slick_in p{
+  font-family: Pretendard;
+  position: absolute;
+  top: 25px;
+  width: 1000px;
+  line-height: 2;
+  left: 132px;
+  height: 122px;
+  font-size: 48px;
+  text-shadow: 1px 1px 3px black;
+  color: white;
+}
