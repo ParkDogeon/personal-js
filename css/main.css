@@ -58,9 +58,10 @@ section{
   margin: 50px 0;
   width: fit-content;
   }
-  #about .wrap .rightS hgroup strong{
+  #about .wrap .rightS hgroup .selfInter{
 
   font-size: 28px;
+  font-weight: 500;
     }
   #about .wrap .rightS hgroup h2 {
     
@@ -98,24 +99,9 @@ section{
   width: 100%;
   height: 100%;
 }
-#work .workHover:hover .wrap ul{
-  animation-name: phoneUp;
-  animation-duration: 1.5s;  
-}
-@keyframes phoneUp{
-  0%{
-    transform: translateY(500px);
-  }
-  100%{
-    
-  }
-}
-#work .workHover:hover .wrap{
-  opacity: 1;
-}
+
 #work .wrap {
-  opacity: 0;
-  transition: 0.7s;
+
 }
 #work ul{
 

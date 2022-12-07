@@ -13,6 +13,10 @@
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
     <!-- 슬릭 스크립트 부분 -->
     <script type="text/javascript" src="slick/slick.min.js"></script>
+    <!-- aos 부분 -->
+    <link href="aos/aos.css" rel="stylesheet">
+    <script src="aos/aos.js"></script>
+
     <script>
         $(document).ready(function(){
             $('.portani').slick({
@@ -25,8 +29,7 @@
 			centerMode: true,
 			centerPadding: '60px',			
 			slidesToShow: 3,
-			responsive: [
-				
+			responsive: [				
 				{
 				breakpoint: 769,
 				settings: {
@@ -54,62 +57,21 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/scroll.css">
-    <link rel="stylesheet" href="css/popup.css">    
-    <!-- <script src="js/jquery-1.6.2.min.js"></script> -->
+    <link rel="stylesheet" href="css/popup.css">
     <!-- ㅇㅇ -->
     <style>
         .smenuText{
             color: white;
             font-weight: bold;
             background-color: red;
-        }
-
-        .hoverWrap{
-            opacity: 1 !important;
-            transition: all 0.7s;
-        }
-        .aboutHover .wrap{
-            opacity: 0;
-        }
-        .goLeft{
-            display: block;
-            animation-name: goleft;
-            animation-duration: 1.5s;
-            animation-iteration-count: 1;
-        }
-        @keyframes goleft{
-            0%{
-                opacity: 0;
-                transform: translateX(-300px);
-                
-            }
-            100%{
-                transform: translateX(0px);
-            }
-        }
-        .goRight{
-            display: block;
-            animation-name: goright;
-            animation-duration: 1.5s;
-            animation-iteration-count: 1;
-
-        }
-        @keyframes goright{
-            0%{
-                opacity: 0;
-                transform: translateX(300px);
-                
-            }
-            100%{
-                transform: translateX(0px);
-            }
-        }
-        
+        }     
     </style>
       
     <script type="text/javascript">
        $(document).ready(                 
             function(){ 
+                // aos 시작선언
+                AOS.init();
                 // 대메뉴 창 클릭시 해당 페이지 이동
                 var c1=$("#title").offset().top;
                 var c2=$("#about").offset().top;
@@ -146,7 +108,8 @@
 				$("html,body").animate({scrollTop:c1},2000);
                 return false;
 			    });
-
+                
+                /*
                 // work 창 hover
                 $(".workHover").hover(function(){
                     $(".workHover .wrap").toggleClass("hoverWrap");
@@ -162,6 +125,7 @@
                         $(".rightS").toggleClass("goRight");
                     }
                 );
+                */
 
                 //popup창
                 $(".popup").addClass("popdown");
@@ -170,6 +134,8 @@
                         $(".popup").removeClass("popdown");
                     }
                 );
+                
+
                 // h2공지사항안에 a태그로 텍스트를 둘러싸기
                 //$(".popup h2").wrapInner("<a href=''></a>");
                 // 쌍따옴표안에 따옴표가 들어갈때는 홀따옴표로 기재
@@ -326,19 +292,7 @@
         </div>
     </header>
     <!-- 타이틀영역 -->
-    <div id="title">
-        <!-- <section id="portfolio">
-            <div class="wrap">
-                <ul class="portani">
-                    <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1664575196079-9ac04582854b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""></li>
-                    <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1665686376173-ada7a0031a85?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""></li>
-                    <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1661961111184-11317b40adb2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80" alt=""></li>
-                    <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1664575198263-269a022d6e14?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""></li>
-                    <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1664574654578-d5a6a4f447bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""></li>
-                    <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1661961112835-ca6f5811d2af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80" alt=""></li>
-                </ul>
-            </div>
-        </section> -->
+    <div id="title">        
         <div class="wrap">          
             <div class="box">
                 <div class="text text1">안</div>
@@ -355,14 +309,16 @@
             <div class="box">지금까지 저는...</div>          
             
             <span><a href="" class="scroll"></a></span>
-            <ul class="portani">
-                <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1664575196079-9ac04582854b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""><p>인천 삼산고 졸업</p></div></li>
-                <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1665686376173-ada7a0031a85?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""><p>병장 만기제대</p></div></li>
-                <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1661961111184-11317b40adb2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80" alt=""><p>인하공전 졸업</p></div></li>
-                <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1664575198263-269a022d6e14?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""><p>정보처리산업기사<br>국비과정 수료</p></div></li>
-                <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1664574654578-d5a6a4f447bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""><p>우체국물류지원단<br> 인천공항국제운송점 <br>근무</p></div></li>
-                <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1661961112835-ca6f5811d2af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80" alt=""><p>UI / UX 과정<br> 수료예정</p></div></li>
-            </ul>
+            <div class="flip_me" data-aos="flip-up" data-aos-duration="500" data-aos-delay="250">
+                <ul class="portani">
+                    <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1664575196079-9ac04582854b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""><p>인천 삼산고 졸업</p></div></li>
+                    <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1665686376173-ada7a0031a85?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""><p>병장 만기제대</p></div></li>
+                    <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1661961111184-11317b40adb2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80" alt=""><p>인하공전 졸업</p></div></li>
+                    <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1664575198263-269a022d6e14?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""><p>정보처리산업기사<br>국비과정 수료</p></div></li>
+                    <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1664574654578-d5a6a4f447bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt=""><p>우체국물류지원단<br> 인천공항국제운송점 <br>근무</p></div></li>
+                    <li><div class="slick_in"><img src="https://images.unsplash.com/photo-1661961112835-ca6f5811d2af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80" alt=""><p>UI / UX 과정<br> 수료예정</p></div></li>
+                </ul>
+            </div>
         </div>        
     </div>
     <!-- 내용영역 -->
@@ -370,9 +326,9 @@
         <section id="about">            
             <div class="aboutHover">
                     <div class="wrap">
-                        <h2 class="aboutMe">ABOUT</h2>
+                        <h2 class="aboutMe" data-aos="fade-right" data-aos-duration="800" data-aos-delay="300">ABOUT</h2>
                         <div class="sumAbout">
-                            <div class="leftS">
+                            <div class="leftS" data-aos="zoom-in-right" data-aos-duration="1250" data-aos-delay="250">
                                 <div class="slider">
                                     <input type="radio" name="slide" id="slide1" checked>
                                     <input type="radio" name="slide" id="slide2">
@@ -409,17 +365,17 @@
                             </div>
                             <div class="rightS">
                                 <hgroup>
-                                    <h1 class="logo"><a href="">LOGO</a></h1>
-                                    <strong>여러분들이 절 만날 수 있도록</strong>
-                                    <h2>포트폴리오를 준비했습니다.</h2>
-                                    <p>안녕하세요.<div class="span block"></div> 
-                                        이번에 UI/UX 국비과정을 듣고있는 학생인 박도건이라고 합니다.<div class="span block"></div> 
-                                        약 4개월간 배운 지식들로 작은 포트폴리오를 준비해 보았습니다.<div class="span block"></div>
-                                        비록 많이 부족하고 어설프지만, 이번 기회로 스스로에게<div class="span block"></div> 
-                                        비드백으로서 받아들이고 앞으로 전진하도록 노력하겠습니다.<div class="span block"></div>
-                                        감사합니다.</p>                        
+                                    <h1 class="logo" data-aos="fade-left" data-aos-duration="1250" data-aos-delay="300"><a href="">LOGO</a></h1>
+                                    <p class="selfInter" data-aos="fade-left" data-aos-duration="1250" data-aos-delay="400">여러분들이 절 만날 수 있도록</p>
+                                    <h2 data-aos="fade-left" data-aos-duration="1250" data-aos-delay="500">포트폴리오를 준비했습니다.</h2>
+                                    <p data-aos="fade-left" data-aos-duration="800" data-aos-delay="500">안녕하세요. <br>
+                                        <span data-aos="fade-left" data-aos-duration="800" data-aos-delay="450">이번에 UI/UX 국비과정을 듣고있는 학생인 박도건이라고 합니다.</span><br>
+                                        <span data-aos="fade-left" data-aos-duration="800" data-aos-delay="600">약 4개월간 배운 지식들로 작은 포트폴리오를 준비해 보았습니다.</span><br>
+                                        <span data-aos="fade-left" data-aos-duration="800" data-aos-delay="750">비록 많이 부족하고 어설프지만, 이번 기회로 스스로에게</span><br>
+                                        <span data-aos="fade-left" data-aos-duration="800" data-aos-delay="900">비드백으로서 받아들이고 앞으로 전진하도록 노력하겠습니다.</span><br>
+                                        <span data-aos="fade-left" data-aos-duration="800" data-aos-delay="1050">감사합니다.</span></p>                        
                                 </hgroup>
-                                <span class="sImg"></span>
+                                <span class="sImg" data-aos="zoom-in-up" data-aos-duration="800" data-aos-delay="1050"></span>
                             </div>                            
                         </div>                        
                     </div>
@@ -430,12 +386,12 @@
             <div class="workHover">
                 <div class="wrap">
                     <hgroup>
-                    <h2 class="workT">WORK</h2>
-                    <p class="works">지금까지 걸어온 미래를 향한 도전의 길<span class="block"></span>
+                    <h2 class="workT" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">WORK</h2>
+                    <p class="works" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">지금까지 걸어온 미래를 향한 도전의 길<span class="block"></span>
                         한번 만나 주시겠습니까?</p>
                     </hgroup>
                     <ul>
-                        <div class="spin">
+                        <div class="spin" data-aos="flip-left" data-aos-duration="700" data-aos-delay="300">
                             <li>
                                 <span><a href="https://parkdogeon.github.io/pr-link1/">1개월차 이미지</a></span>
                                 <p class="name">루나브루 수제맥주</p>
@@ -448,7 +404,7 @@
                                     <span class="inside"><a href="https://parkdogeon.github.io/pr-link1/">1개월차 이미지</a></span>
                             </li>
                         </div>
-                        <div class="spin">
+                        <div class="spin" data-aos="flip-left" data-aos-duration="700" data-aos-delay="500">
                             <li>
                                 <span><a href="https://parkdogeon.github.io/pr-link2/">2개월차 이미지</a></span>
                                 <p class="name">루나브루 수제맥주 리뉴얼</p>
@@ -461,7 +417,7 @@
                                     <span class="inside"><a href="https://parkdogeon.github.io/pr-link2/">2개월차 이미지</a></span>
                             </li>
                         </div>
-                        <div class="spin">
+                        <div class="spin" data-aos="flip-left" data-aos-duration="700" data-aos-delay="700">
                             <li>
                                 <span><a href="https://parkdogeon.github.io/pr-link3/">3개월차 이미지</a></span>
                                 <p class="name">리뉴얼반응형</p>
@@ -474,7 +430,7 @@
                                     <span class="inside"><a href="https://parkdogeon.github.io/pr-link3/">2개월차 이미지</a></span>
                             </li>
                         </div>
-                        <div class="spin">
+                        <div class="spin" data-aos="flip-left" data-aos-duration="700" data-aos-delay="900">
                             <li>
                                 <span><a href="https://parkdogeon.github.io/pr-link4/">4개월차 이미지</a></span>
                                 <p class="name">현대건설</p>
@@ -495,11 +451,11 @@
         <section id="skill">
             <div class="wrap">
                 <div class="popup">
-                    <h2>SKILL</h2>                    
+                    <h2 data-aos="zoom-in" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="250">SKILL</h2>                    
                 </div>
-                <h2>SKILLS</h2>
+                <h2 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="250">SKILLS</h2>
                 <div class="skillImg">
-                    <figure>
+                    <figure data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="250">
                         <img src="img/skill1.png" alt="">
                         <figcaption>
                             <h3>html</h3>
@@ -507,7 +463,7 @@
                                  웹 페이지를 만들수 있습니다.</p>
                         </figcaption>
                     </figure>
-                    <figure>
+                    <figure data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="250">
                         <img src="img/skill2.png" alt="">
                         <figcaption>
                             <h3>css</h3>
@@ -516,7 +472,7 @@
                                  HTML의 스타일을 꾸며줄 수 있습니다.</p>
                         </figcaption>
                     </figure>
-                    <figure>
+                    <figure data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="250">
                         <img src="img/skill3.png" alt="">
                         <figcaption>
                             <h3>javascript</h3>
@@ -525,7 +481,7 @@
                                  효과적으로 다룰 수 있습니다.</p>
                         </figcaption>
                     </figure>
-                    <figure>
+                    <figure data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="250">
                         <img src="img/skill4.png" alt="">
                         <figcaption>
                             <h3>jquery</h3>
@@ -534,7 +490,7 @@
                                  좀 더 간편하고 쉽게 사용할 수 있습니다.</p>
                         </figcaption>
                     </figure>
-                    <figure>
+                    <figure data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="250">
                         <img src="img/skill5.png" alt="">
                         <figcaption>
                             <h3>sass</h3>
@@ -544,9 +500,9 @@
                         </figcaption>
                     </figure>
                 </div>
-                <h2>TOOLS</h2>
+                <h2 data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="250">TOOLS</h2>
                 <div class="toolImg">
-                    <figure>
+                    <figure data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="250">
                         <img src="img/tool1.png" alt="">
                         <figcaption>
                             <h3>photoshop</h3>
@@ -556,7 +512,7 @@
                             </p>
                         </figcaption>
                     </figure>
-                    <figure>
+                    <figure data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="250">
                         <img src="img/tool2.png" alt="">
                         <figcaption>
                             <h3>Adobe Illustrator</h3>
@@ -566,7 +522,7 @@
                             </p>
                         </figcaption>
                     </figure>
-                    <figure>
+                    <figure data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="250">
                         <img src="img/tool3.png" alt="">
                         <figcaption>
                             <h3>Visual Studio Code</h3>
@@ -576,7 +532,7 @@
                             </p>
                         </figcaption>
                     </figure>
-                    <figure>
+                    <figure data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="250">
                         <img src="img/tool4.png" alt="">
                         <figcaption>
                             <h3>kakao oven</h3>
@@ -585,7 +541,7 @@
                             </p>
                         </figcaption>
                     </figure>
-                    <figure>
+                    <figure data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="250">
                         <img src="img/tool5.png" alt="">
                         <figcaption>
                             <h3>google drive</h3>
